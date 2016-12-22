@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TutorialShare</title>
+    <%= csrf_meta_tags %>
+    <link href="https://fonts.googleapis.com/css?family=Emblema+One|Montserrat:400,700" rel="stylesheet">
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    
+  </head>
+
+  <body>
+    <% flash.each do |type, msg| %>
+      <%= content_tag :div, msg, class: "flash_#{type}" %>
+    <% end %>
+
+    <% if current_user %>
+      <%= link_to "Logout", logout_path %>
+    <% else %>
+      <%= link_to "Login", login_path %>
+    <% end %>
+
+    <%= yield %>
+  </body>
+</html>

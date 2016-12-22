@@ -1,0 +1,17 @@
+.row
+  .col-md-6
+    = form_tag login_path do
+      
+      .form-group
+        = label_tag :email
+        = email_field_tag :email, nil, class: 'form-control' 
+
+      .form-group
+        = label_tag :password    
+        = password_field_tag :password, nil, class: 'form-control'
+
+      = submit_tag "Login", class: "btn btn-primary"
+
+%p
+  Don't have an account?
+  = link_to "Register here", new_user_path, class: "btn btn-success"

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "Create new admin user" do
 
-  scenario "only available to another admin" do
+  scenario "available to another admin" do
     allow_any_instance_of(ApplicationController).to receive(:current_admin?).and_return(true)
     visit new_admin_user_path
     fill_in 'user[first_name]', :with => "Annie"
@@ -12,8 +12,14 @@ RSpec.feature "Create new admin user" do
     fill_in 'user[password]', :with => "password"
     click_on "Create Admin"
 
-
     expect(page).to have_content("Now logged in as Annie!")
+  end
+
+  scenario "not available to regular user" do
+    allow_any_instance_of(ApplicationController).to receive(:current_admin?).and_return(false)
+    visit new_admin_user_path
+
+    expect(page).to have_content("You are not authorized to commit this action")
   end
 
 end

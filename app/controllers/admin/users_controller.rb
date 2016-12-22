@@ -2,7 +2,7 @@ class Admin::UsersController < ApplicationController
   before_action :require_admin
 
   def require_admin
-    render file: "/public/404" unless current_admin?
+    render :not_authorized unless current_admin?
   end
 
   def new

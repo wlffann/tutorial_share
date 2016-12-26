@@ -1,9 +1,4 @@
-class Admin::UsersController < ApplicationController
-  before_action :require_admin
-
-  def require_admin
-    render :not_authorized unless current_admin?
-  end
+class Admin::UsersController < Admin::BaseController
 
   def new
     @user = User.new

@@ -6,5 +6,6 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :users, only: [:new, :create, :show]
+    resources :categories, only: [:new, :create, :show]
   end
 end

@@ -1,0 +1,8 @@
+.row
+  .col-md-6
+    = form_for [:admin, @category] do |f|
+      = render partial:'shared/errors', locals: {target: @category}
+      .form_group
+        = f.label :name
+        = f.text_field :name, class: "form-control"
+      = f.submit nil, class: "btn btn-primary"

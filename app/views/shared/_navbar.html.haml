@@ -1,0 +1,11 @@
+%nav
+  %ul#nav-links
+    %li#brand
+      %h1 TutorialShare
+    %li.links
+      = link_to "Categories", categories_path
+    %li#logout
+      - if current_user
+        = link_to "Logout", logout_path, class: "btn btn-danger"
+      - else
+        = link_to "Login", login_path, class: "btn btn-primary"

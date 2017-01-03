@@ -1,0 +1,31 @@
+$dark-grey: #7D7D7D;
+$medium-grey: #b1b1b1;
+$light-grey: #f2f2f2;
+
+
+.category-show {
+  margin: 3% 0;
+  border: 3px dotted $dark-grey;
+  max-width: 90%;
+  background-color: $medium-grey;
+}
+
+.category-title {
+  padding: 1%;
+  border-bottom: 2px solid $dark-grey;
+}
+
+.category-title a {
+  text-decoration: none;
+  color: 	#454545;
+  transition: .5s;
+}
+
+.category-title a:hover {
+  transform: scale(1.1);
+}
+
+.category-projects {
+  background-color: $light-grey;
+  min-height: 15%;
+}

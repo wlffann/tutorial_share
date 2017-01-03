@@ -1,0 +1,11 @@
+%h1 All Categories
+
+- @categories.each do |category|
+  .category-show
+    .category-title
+      %h2= link_to category.name, category_path(category)
+    .category-projects
+
+
+-if current_admin?
+  =link_to "New Category", new_admin_category_path, class: "btn btn-primary"

@@ -1,10 +1,22 @@
 $body-font: 'Montserrat', sans-serif;
 $logo-font: 'Emblema One', cursive;
+$extra-large: 30px;
+$large: 25px;
+$medium: 15px;
 
 body {
   font-family: $body-font;
+  color: white;
+}
+
+h1 {
+  font-size: $extra-large;
 }
 
 h2 {
-  font-family: $logo-font;
+  font-size: $large
+}
+
+h3 {
+  font-size: $medium
 }
